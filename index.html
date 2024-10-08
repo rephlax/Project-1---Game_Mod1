@@ -6,10 +6,49 @@
     <title>Whack a Mole!</title>
 </head>
 <body>
-    <section id="introScreen"></section>
-    <section id="gameScreen"></section>
-    <section id="endingScreen">
-    </section>
-    <section id="gameOverScreen"></section>
+    <title id="game-title"></title>
+    <game id="game-container">
+        <section id="intro-screen">
+            <form id="name-form">
+                <label for="name-input">Name</label>
+                <input type="text" id="name-input" name="name-input" placeholder="John"/>
+                <label for="hole-input">Hole amount 2-10</label>
+                <input type="number" name="hole-input" id="hole-input" required/>
+                <button type="reset" id="form-reset-btn">Reset</button>
+                <button type="submit" id="form-submit-btn">Submit</button>
+            </form>
+            <button type="button" id="start-button">Start Game!</button>
+        </section>
+
+        <section id="game-screen">
+            <div id="game-area">
+                <div id="mole-holes">
+                    <div id="mole-hill-1"></div>
+                    <div id="mole-hill-2"></div>
+                    <div id="mole-hill-3"></div>
+                    <div id="mole-hill-4"></div>
+                    <div id="mole-hill-5"></div>
+                    <div id="mole-hill-6"></div>
+                    <div id="mole-hill-7"></div>
+                    <div id="mole-hill-8"></div>
+                    <div id="mole-hill-9"></div>
+                    <div id="mole-hill-10"></div>
+                </div>
+            <div id="grass-area"></div>
+            </div>
+        </section>
+
+        <section id="ending-screen">
+            <img id="mole-image-ending"/>
+            <div id="name-display"></div>
+            <p id="score-count"></p>
+        </section>
+
+        <section id="game-over-screen">
+            <img id="mole-image-ending"/>
+            <div id="name-display"></div>
+            <p id="score-count"></p>
+        </section>
+    </game>
 </body>
 </html>
