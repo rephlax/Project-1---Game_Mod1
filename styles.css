@@ -1,0 +1,81 @@
+body {
+    font-family: "Pixelify Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(./assets/Images/intro-backing.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+    overflow: hidden;
+}
+
+#title-container{
+    display: flex;
+    justify-content: center;
+}
+
+#game-title {
+    font-size: 80px;
+    background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczd6OG95a2w3YTE5OTRhM3FlYzNodGtkdnZkbWd6ZzFrdm9meWZpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPGcM9CazM9H5KrEA/giphy.webp') no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+#intro-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#name-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid bisque;
+    margin-top: 50px ;
+    padding: 10px 20px;
+}
+
+#name-form > label {
+    margin-top: 10px;
+}
+
+#name-form > input {
+    border: none;
+    background-color: bisque;
+}
+
+#name-form > input:nth-last-child(n){
+    margin-bottom: 10px;
+}
+
+#intro-button-container{
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#name-form > button {
+    
+}
+
+#start-button {
+    margin-top: 20px;
+}
