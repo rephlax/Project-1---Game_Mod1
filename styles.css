@@ -12,13 +12,18 @@ body {
     overflow: hidden;
 }
 
+#hammer {
+    position: absolute;
+    pointer-events: none;
+}
+
 #title-container{
     display: flex;
     justify-content: center;
 }
 
 #game-title {
-    font-size: 80px;
+    font-size: 10vw;
     background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExczd6OG95a2w3YTE5OTRhM3FlYzNodGtkdnZkbWd6ZzFrdm9meWZpayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPGcM9CazM9H5KrEA/giphy.webp') no-repeat;
     background-clip: text;
     -webkit-background-clip: text;
@@ -28,6 +33,7 @@ body {
     background-position: center;
     background-size: cover;
     text-transform: uppercase;
+    margin: 20px;
 }
 
 #intro-screen {
@@ -44,8 +50,8 @@ body {
     justify-content: center;
     align-items: center;
     border: 5px solid bisque;
-    margin-top: 50px ;
     padding: 10px 20px;
+    font-size: 1.25rem;
 }
 
 #name-form > label {
@@ -78,4 +84,17 @@ button {
 
 #start-button {
     margin-top: 20px;
+}
+
+#game-screen {
+    display: none;
+    width: 80%;
+    max-width: 1000px;
+    height: 70%;
+    background-color: bisque;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    margin: auto;
+    transform: translate(-50%, -50%); /* Center the element */
 }
