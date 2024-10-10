@@ -19,9 +19,9 @@
                 <label for="name-input">Name</label>
                 <input type="text" id="name-input" name="name-input" placeholder="John"/>
                 <label for="hole-input">Hole count from 2-10</label>
-                <input type="number" name="hole-input" id="hole-input" required/>
+                <input type="number" name="hole-input" id="hole-input" min="2" max="10" required/>
                 <label for="speed-input">Speed from 100 - 5000</label>
-                <input type="number" name="speed-input" id="speed-input">
+                <input type="number" name="speed-input" id="speed-input" min="100" max="5000" required>
                 <div id="intro-button-container">
                     <button type="reset" id="form-reset-btn">Reset</button>
                     <button type="submit" id="form-submit-btn">Submit</button>
@@ -32,7 +32,6 @@
 
         <section id="game-screen">
             <div id="game-area">
-                <img id="hammer" alt="hammer" src=""/>
                 <div id="mole-holes">
                     <div id="mole-hill-1" class="mole-hill"></div>
                     <div id="mole-hill-2" class="mole-hill"></div>
@@ -66,6 +65,8 @@
             <div id="speed-display"></div>
             <div id="cheats-state-display"></div>
         </div>
+        <img id="hammer" alt="hammer" src="./assets/Images/smallhammer.png"/>
     </game>
+<script src="./index.js"></script>
 </body>
 </html>
