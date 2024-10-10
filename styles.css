@@ -13,8 +13,24 @@ body {
 }
 
 #hammer {
-    position: absolute;
+    position: fixed;
     pointer-events: none;
+    z-index: 1000;
+    image-rendering: pixelated;
+    transform-origin: 50% 100%;
+    width: 80px;
+    height: auto;
+    transform: rotate(-45deg);
+}
+
+.hammer-animation {
+    animation: hammerSmack 0.3s steps(3) forwards;
+}
+
+@keyframes hammerSmack {
+    0% { transform: rotate(-45deg); }
+    66% { transform: rotate(60deg); }
+    100% { transform: rotate(-45deg); }
 }
 
 #title-container{
