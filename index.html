@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whack a Mole!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
 </head>
 <body>
-    <title id="game-title"></title>
+    <div id="title-container">
+        <h1 id="game-title">Smack-a-Mole</h1>
+    </div>
     <game id="game-container">
         <section id="intro-screen">
             <form id="name-form">
@@ -16,8 +22,10 @@
                 <input type="number" name="hole-input" id="hole-input" required/>
                 <label for="speed-input">Speed from 100 - 5000</label>
                 <input type="number" name="speed-input" id="speed-input">
-                <button type="reset" id="form-reset-btn">Reset</button>
-                <button type="submit" id="form-submit-btn">Submit</button>
+                <div id="intro-button-container">
+                    <button type="reset" id="form-reset-btn">Reset</button>
+                    <button type="submit" id="form-submit-btn">Submit</button>
+                </div>
             </form>
             <button type="button" id="start-button">Start Game!</button>
         </section>
