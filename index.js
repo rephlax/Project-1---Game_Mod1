@@ -9,7 +9,7 @@ const hammerOffsetY = -80;
 document.addEventListener('mousemove', (event) => {
     const x = event.clientX;
     const y = event.clientY;
-
+                                                
     // Position updating
     hammer.style.left = `${x + hammerOffsetX}px`;
     hammer.style.top = `${y + hammerOffsetY}px`;
