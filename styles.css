@@ -50,6 +50,7 @@ body {
     background-size: cover;
     text-transform: uppercase;
     margin: 20px;
+    cursor: default;
 }
 
 #intro-screen {
