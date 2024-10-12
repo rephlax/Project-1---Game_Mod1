@@ -14,21 +14,25 @@
         <h1 id="game-title">Smack-a-Mole</h1>
     </div>
     <game id="game-container">
-        <section id="intro-screen">
-            <form id="name-form">
-                <label for="name-input">Name</label>
-                <input type="text" id="name-input" name="name-input" placeholder="John"/>
-                <label for="hole-input">Hole count from 2-10</label>
-                <input type="number" name="hole-input" id="hole-input" min="2" max="10" required/>
-                <label for="speed-input">Speed from 100 - 5000</label>
-                <input type="number" name="speed-input" id="speed-input" min="100" max="5000" required>
-                <div id="intro-button-container">
-                    <button type="reset" id="form-reset-btn">Reset</button>
-                    <button type="submit" id="form-submit-btn">Submit</button>
-                </div>
-            </form>
-            <button type="button" id="start-button">Start Game!</button>
-        </section>
+
+        <div id="intro-screen" class="section">
+        <form id="game-form">
+            <label for="player-name">Name:</label>
+            <input type="text" id="player-name" required>
+            
+            <label for="active-holes">Active Holes (2-10):</label>
+            <input type="number" id="active-holes" min="2" max="10" required>
+            
+            <label for="game-speed">Speed (100-5000ms):</label>
+            <input type="number" id="game-speed" min="100" max="5000" required>
+            
+            <div id="intro-button-container">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <button id="start-button">Start Game!</button>
+    </div>
 
         <section id="game-screen">
             <div id="game-area">
