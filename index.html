@@ -14,31 +14,39 @@
         <h1 id="game-title">Smack-a-Mole</h1>
     </div>
     <game id="game-container">
+        
+        <div id="intro-screen">
+            <form id="name-form">
 
-        <div id="intro-screen" class="section">
-        <form id="game-form">
-            <label for="player-name">Name:</label>
-            <input type="text" id="player-name" required>
-            
-            <label for="active-holes">Active Holes (2-10):</label>
-            <input type="number" id="active-holes" min="2" max="10" required>
-            
-            <label for="game-speed">Speed (100-5000ms):</label>
-            <input type="number" id="game-speed" min="100" max="5000" required>
-            
-            <div id="intro-button-container">
-                <button type="reset">Reset</button>
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-        <button id="start-button">Start Game!</button>
-    </div>
+                <label for="name-input">Name</label>
+                <input type="text" id="name-input" name="name-input" placeholder="John"/>
 
-        <section id="game-screen">
+                <label for="hole-input">Hole count ( 2 - 10 )</label>
+                <input type="number" name="hole-input" id="hole-input" min="2" max="10" required/>
+
+                <label for="speed-input">Speed ( 100ms - 5000ms )</label>
+                <input type="number" name="speed-input" id="speed-input" min="100" max="5000" required>
+
+                <div id="intro-button-container">
+                    <button type="reset" id="form-reset-btn">Reset</button>
+                    <button type="submit" id="form-submit-btn">Submit</button>
+                </div>
+            </form>
+            <button type="button" id="start-button">Start Game!</button>
+        </div>
+
+        <div id="game-screen">
             <div id="game-area">
+            <div id="settings">
+                <form>
+                    <label for="cheats">Cheats</label>
+                    <input type="checkbox" name="cheats" id="cheats"/>
+                </form>
+
+            </div>
+            <div id="grass-area">
                 <div id="mole-holes">
                     <div id="mole-hill-1" class="mole-hill"></div>
-                    <div id="mole-hill-2" class="mole-hill"></div>
                     <div id="mole-hill-2" class="mole-hill"></div>
                     <div id="mole-hill-3" class="mole-hill"></div>
                     <div id="mole-hill-4" class="mole-hill"></div>
@@ -49,9 +57,10 @@
                     <div id="mole-hill-9" class="mole-hill"></div>
                     <div id="mole-hill-10" class="mole-hill"></div>
                 </div>
-            <div id="grass-area"></div>
+                <button type="button" id="start-game-button">Start</button>
             </div>
-        </section>
+            </div>
+        </div>
 
         <section id="ending-screen">
             <img id="mole-image-ending"/>
@@ -71,6 +80,6 @@
         </div>
         <img id="hammer" alt="hammer" src="./assets/Images/smallhammer.png"/>
     </game>
-<script src="./index.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
