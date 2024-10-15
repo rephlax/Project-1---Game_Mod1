@@ -21,6 +21,7 @@ export class Intro {
         alert("Your settings have been submitted!")
     }
 
+    // To enforce the reset button action
     resetForm() {
         this.nameInput.value = '';
         this.holeCountInput.value = '';
@@ -37,6 +38,7 @@ export class Intro {
         this.gameScreen.style.display = "flex";
     }
 
+    // Allows people to click start without submitting the start settings form.
     getGameSettings() {
         const defaultHoleCount = 6;
         const defaultSpeed = 1000;
