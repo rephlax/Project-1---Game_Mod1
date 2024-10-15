@@ -24,8 +24,8 @@
                 <label for="hole-input">Hole count ( 2 - 10 )</label>
                 <input type="number" name="hole-input" id="hole-input" min="2" max="10" required/>
 
-                <label for="speed-input">Speed ( 100ms - 5000ms )</label>
-                <input type="number" name="speed-input" id="speed-input" min="100" max="5000" required>
+                <label for="speed-input">Speed ( 1000ms - 5000ms )</label>
+                <input type="number" name="speed-input" id="speed-input" min="1000" max="5000" required>
 
                 <div id="intro-button-container">
                     <button type="reset" id="form-reset-btn">Reset</button>
@@ -38,26 +38,29 @@
         <div id="game-screen">
             <div id="game-area">
             <div id="settings">
-                <form>
-                    <label for="cheats">Cheats</label>
-                    <input type="checkbox" name="cheats" id="cheats"/>
-                </form>
+                <div>
+                    <form>
+                        <label for="cheats">Cheats</label>
+                        <input type="checkbox" name="cheats" id="cheats"/>
+                    </form>
+                    <span id="score-display"></span>
+                </div>
+                <span id="player-name"></span>
 
             </div>
             <div id="grass-area">
                 <div id="mole-holes">
-                    <div id="mole-hill-1" class="mole-hill"></div>
-                    <div id="mole-hill-2" class="mole-hill"></div>
-                    <div id="mole-hill-3" class="mole-hill"></div>
-                    <div id="mole-hill-4" class="mole-hill"></div>
-                    <div id="mole-hill-5" class="mole-hill"></div>
-                    <div id="mole-hill-6" class="mole-hill"></div>
-                    <div id="mole-hill-7" class="mole-hill"></div>
-                    <div id="mole-hill-8" class="mole-hill"></div>
-                    <div id="mole-hill-9" class="mole-hill"></div>
-                    <div id="mole-hill-10" class="mole-hill"></div>
+                    <div id="mole-hill-1" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-2" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-3" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-4" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-5" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-6" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-7" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-8" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-9" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
+                    <div id="mole-hill-10" class="mole-hill"><img class="mole" src="./assets/Images/mole.png" alt="Mole"></div>
                 </div>
-                <button type="button" id="start-game-button">Start</button>
             </div>
             </div>
         </div>
@@ -68,11 +71,6 @@
             <p id="score-count"></p>
         </section>
 
-        <section id="game-over-screen">
-            <img id="mole-image-ending"/>
-            <div id="name-display"></div>
-            <p id="score-count"></p>
-        </section>
         <div id="settings-menu">
             <div id="mole-count-display"></div>
             <div id="speed-display"></div>

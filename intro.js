@@ -2,6 +2,7 @@ export class Intro {
     constructor(onGameStart) {
         this.introScreen = document.getElementById("intro-screen");
         this.gameScreen = document.getElementById("game-screen");
+        this.nameForm = document.getElementById("name-form");
         this.nameInput = document.getElementById("name-input");
         this.holeCountInput = document.getElementById("hole-input");
         this.speedInput = document.getElementById("speed-input");
@@ -10,50 +11,25 @@ export class Intro {
         this.startBtn = document.getElementById("start-button");
         this.onGameStart = onGameStart;
         
-        this.formSubmitBtn.addEventListener("click", this.validateForm.bind(this));
+        this.nameForm.addEventListener("submit", this.handleFormSubmit.bind(this));
         this.formResetBtn.addEventListener("click", this.resetForm.bind(this));
         this.startBtn.addEventListener("click", this.handleStartClick.bind(this));
     }
 
-    validateForm(event) {
+    handleFormSubmit(event) {
         event.preventDefault();
-        if (this.checkFormValidity()) {
-            this.startBtn.disabled = false;
-        } else {
-            this.startBtn.disabled = true;
-        }
-    }
-
-    checkFormValidity() {
-        if (!this.nameInput.value.trim()) {
-            alert("Please enter your name.");
-            return false;
-        }
-        const holeCount = parseInt(this.holeCountInput.value);
-        if (isNaN(holeCount) || holeCount < 2 || holeCount > 10) {
-            alert("Please enter a valid number of holes (2-10).");
-            return false;
-        }
-        const speed = parseInt(this.speedInput.value);
-        if (isNaN(speed) || speed < 100 || speed > 5000) {
-            alert("Please enter a valid speed (100-5000ms).");
-            return false;
-        }
-        return true;
+        alert("Your settings have been submitted!")
     }
 
     resetForm() {
         this.nameInput.value = '';
         this.holeCountInput.value = '';
         this.speedInput.value = '';
-        this.startBtn.disabled = true;
     }
 
     handleStartClick() {
-        if (this.checkFormValidity()) {
             this.showGameScreen();
             this.onGameStart(this.getGameSettings());
-        }
     }
 
     showGameScreen() {
@@ -62,10 +38,13 @@ export class Intro {
     }
 
     getGameSettings() {
+        const defaultHoleCount = 6;
+        const defaultSpeed = 1000;
+
         return {
-            playerName: this.nameInput.value.trim(),
-            holeCount: parseInt(this.holeCountInput.value),
-            speed: parseInt(this.speedInput.value)
+            playerName: this.nameInput.value.trim() || "Player",
+            holeCount: parseInt(this.holeCountInput.value) || defaultHoleCount,
+            speed: parseInt(this.speedInput.value) || defaultSpeed
         };
     }
 }

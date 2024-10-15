@@ -133,6 +133,9 @@ button {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 #grass-area {
@@ -143,6 +146,7 @@ button {
     right: 0;
     height: 30%;
     width: auto;
+    z-index: 2;
 }
 
 #mole-holes {
@@ -150,10 +154,11 @@ button {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    top: -20px;
+    bottom: 0;
 }
 
 .mole-hill {
+    position: relative;
     width: 500px;
     height: 20px;
     background-image: url('./assets/Images/dirt-mound.png');
@@ -161,11 +166,41 @@ button {
     background-size: cover;
 }
 
+.mole {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: auto;
+    display: none;
+    cursor: pointer;
+    z-index: -2;
+}
+
+.mole-up {
+    display: block;
+}
+
 #start-game-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#player-name {
+    font-size: 2rem;
+    background: url('https://media1.giphy.com/media/fSRQtBAzrPokPCItuu/giphy.webp?cid=790b761198e539u3jl86u3kupq1dtgrofhsbtjhdun5w9e5a&ep=v1_gifs_search&rid=giphy.webp&ct=g') no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    text-transform: uppercase;
+    cursor: default;
 }
 
 .hidden {

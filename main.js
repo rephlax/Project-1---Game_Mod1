@@ -9,7 +9,7 @@ class Main {
         this.game = new Game(this.endGame.bind(this));
         this.intro = new Intro(this.startGame.bind(this));
 
-        // Set up hammer functionality
+        // FOr the hammer to work
         document.addEventListener('mousemove', followCursor);
         document.addEventListener('click', animateHammer);
     }
@@ -28,5 +28,5 @@ class Main {
 // Initialize the game when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     new Main();
-    console.log("Game initialized");
+    console.log("Game init");
 });
