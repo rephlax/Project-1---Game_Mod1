@@ -4,9 +4,10 @@ const hammerOffsetX = 5;
 const hammerOffsetY = -80;
 
 export function followCursor(event) {
+    // get the mouse location
     const x = event.clientX;
     const y = event.clientY;
-    
+    // offset the hammer to the mouse location
     hammer.style.left = `${x + hammerOffsetX}px`;
     hammer.style.top = `${y + hammerOffsetY}px`;
 }
