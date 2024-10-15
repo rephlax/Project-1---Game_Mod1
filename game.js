@@ -44,8 +44,7 @@ export class Game {
     }
 
     selectAndShowHoles(count) {
-        const shuffled = Array.from(this.moleHills).sort(() => 0.5 - Math.random());
-        this.activeHoles = shuffled.slice(0, count);
+        this.activeHoles = Array.from(this.moleHills).slice(0, count);
         this.activeHoles.forEach(hill => {
             hill.style.display = "block";
             hill.addEventListener('click', this.hitMole.bind(this));

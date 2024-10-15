@@ -1,5 +1,6 @@
 const hammer = document.getElementById('hammer');
 
+// preset offset, I didn't go with a responsive design as I couldn't figure out the maths for this on my own :(
 const hammerOffsetX = 5;
 const hammerOffsetY = -80;
 

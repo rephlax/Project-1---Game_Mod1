@@ -108,7 +108,7 @@ button {
     width: 90%;
     max-width: 1200px;
     height: 60%;
-    background-color: #8B4513; /* Brown color for the border */
+    background-color: #8B4513;
     position: fixed;
     top: 60%;
     left: 50%;
@@ -171,7 +171,7 @@ button {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 40%;
     height: auto;
     display: none;
     cursor: pointer;
