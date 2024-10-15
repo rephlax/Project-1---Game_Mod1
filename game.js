@@ -10,13 +10,13 @@ export class Game {
         this.score = 0;
         this.gameInterval = null;
         this.endGameCallback = endGameCallback;
-        this.playerName = "Player";
+        this.playerName = "PLAYER";
     }
 
     startGame(settings) {
         this.resetGame();
         this.selectAndShowHoles(settings.holeCount);
-        this.playerName = settings.playerName || "Player";
+        this.playerName = settings.playerName.toUpperCase() || "PLAYER";
         this.updateScoreDisplay();
         this.updatePlayerName(settings.playerName);
         const speed = settings.speed;
