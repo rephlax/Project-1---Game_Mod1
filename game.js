@@ -11,6 +11,10 @@ export class Game {
         this.gameInterval = null;
         this.endGameCallback = endGameCallback;
         this.playerName = "PLAYER";
+
+        // to stop the click and drag from happening
+        this.preventDrag = this.preventDrag.bind(this);
+        document.addEventListener('dragstart', this.preventDrag);
     }
 
     startGame(settings) {
@@ -127,8 +131,15 @@ export class Game {
         }
     }
 
+    preventDrag(event) {
+        if (event.target.classList.contains('mole')) {
+            event.preventDefault();
+        }
+    }
+
     endGame() {
         clearInterval(this.gameInterval);
         this.endGameCallback(this.score);
+        document.removeEventListener('dragstart', this.preventDrag);
     }
 }

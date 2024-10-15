@@ -176,6 +176,9 @@ button {
     display: none;
     cursor: pointer;
     z-index: -2;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .mole-up {
