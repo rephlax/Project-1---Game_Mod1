@@ -32,7 +32,7 @@
                     <button type="submit" id="form-submit-btn">Submit</button>
                 </div>
             </form>
-            <button type="button" id="start-button">Start Game!</button>
+            <button type="button" class="glow-on-hover" id="start-button">Start Game!</button>
         </div>
 
         <div id="game-screen">
@@ -40,10 +40,14 @@
             <div id="settings">
                 <div>
                     <form>
-                        <label for="cheats">Cheats</label>
+                        <label for="cheats">Enable cheats</label>
                         <input type="checkbox" name="cheats" id="cheats"/>
                     </form>
                     <span id="score-display"></span>
+                </div>
+                <div id="audio-controls">
+                    <label for="volume-slider">Volume:</label>
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
                 </div>
                 <span id="player-name"></span>
 
@@ -65,11 +69,14 @@
             </div>
         </div>
 
-        <section id="ending-screen">
-            <img id="mole-image-ending"/>
-            <div id="name-display"></div>
-            <p id="score-count"></p>
-        </section>
+        <div id="ending-screen">
+            <img src="./assets/Images/game-over.png" id="game-over-image" alt="Game Over">
+            <div id="ending-area">
+                <div id="name-display"></div>
+                <div id="score-count"></div>
+                <button id="restart-button" class="glow-on-hover">Play Again</button>
+            </div>
+        </div>
 
         <div id="settings-menu">
             <div id="mole-count-display"></div>
@@ -79,5 +86,13 @@
         <img id="hammer" alt="hammer" src="./assets/Images/smallhammer.png"/>
     </game>
     <script type="module" src="main.js"></script>
+    <audio id="hammer-sound" src="./assets/Sounds/swing.mp3"></audio>
+    <audio id="mole-hit-sound" src="./assets/Sounds/bonk.mp3"></audio>
+    <audio id="intro-music" loop>
+        <source src="./assets/Sounds/intro-song.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="game-music" loop>
+        <source src="./assets/Sounds/gamesong.mp3" type="audio/mpeg">
+    </audio>
 </body>
 </html>

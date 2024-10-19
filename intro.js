@@ -10,10 +10,20 @@ export class Intro {
         this.formResetBtn = document.getElementById("form-reset-btn");
         this.startBtn = document.getElementById("start-button");
         this.onGameStart = onGameStart;
+
+        this.introMusic = document.getElementById("intro-music");
+        this.playIntroMusic();
+        document.addEventListener('click', this.handleFirstInteraction.bind(this), { once: true }); //Needed for the sound to work on first click.
         
         this.nameForm.addEventListener("submit", this.handleFormSubmit.bind(this));
         this.formResetBtn.addEventListener("click", this.resetForm.bind(this));
         this.startBtn.addEventListener("click", this.handleStartClick.bind(this));
+    }
+
+    handleFirstInteraction() {
+        if (!this.musicPlaying) {
+            this.playIntroMusic();
+        }
     }
 
     handleFormSubmit(event) {
@@ -28,9 +38,39 @@ export class Intro {
         this.speedInput.value = '';
     }
 
+    playIntroMusic() {
+        if (this.introMusic) {
+            this.introMusic.play()
+                .then(() => {
+                    this.musicPlaying = true;
+                    this.introMusic.volume = 0.2;
+                })
+                .catch(error => {
+                    console.error("Error playing intro music:", error);
+                });
+        }
+    }
+
     handleStartClick() {
+        this.fadeOutIntroMusic(() => {
             this.showGameScreen();
             this.onGameStart(this.getGameSettings());
+        });
+    }
+
+    fadeOutIntroMusic(callback) {
+        let volume = this.introMusic.volume;
+        const fadeOutInterval = setInterval(() => {
+            if (volume > 0.05) {
+                volume -= 0.05;
+                this.introMusic.volume = volume;
+            } else {
+                clearInterval(fadeOutInterval);
+                this.introMusic.pause();
+                this.introMusic.currentTime = 0;
+                callback();
+            }
+        }, 100);
     }
 
     showGameScreen() {

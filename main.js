@@ -9,7 +9,7 @@ class Main {
         this.game = new Game(this.endGame.bind(this));
         this.intro = new Intro(this.startGame.bind(this));
 
-        // FOr the hammer to work
+        // For the hammer to work
         document.addEventListener('mousemove', followCursor);
         document.addEventListener('click', animateHammer);
     }
@@ -22,7 +22,9 @@ class Main {
     endGame(score) {
         const settings = this.intro.getGameSettings();
         this.ending.showEndScreen(score, settings.playerName);
+        this.intro.playIntroMusic();
     }
+
 }
 
 // Initialize the game when the DOM is fully loaded
