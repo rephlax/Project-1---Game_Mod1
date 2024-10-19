@@ -104,7 +104,7 @@ export class Game {
 
     startMoleAppearance(speed) {
         this.gameInterval = setInterval(() => this.showRandomMole(speed), speed);
-        setTimeout(() => this.endGame(), 120000);
+        setTimeout(() => this.endGame(), 12000);
     }
 
         // Taking the number of hole available, picks a random hole, gives the animation.
