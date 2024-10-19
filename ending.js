@@ -1,5 +1,5 @@
 export class Ending {
-    constructor(restartCallback) {
+    constructor() {
         this.endingScreen = document.getElementById("ending-screen");
         this.introScreen = document.getElementById("intro-screen");
         this.nameDisplay = document.querySelectorAll("#name-display");
@@ -7,7 +7,6 @@ export class Ending {
         this.gameScreen = document.querySelector("#game-screen");
         this.restartButton = document.getElementById("restart-button");
 
-        this.restartCallback = restartCallback;
         this.restartButton.addEventListener("click", this.handleRestartClick.bind(this));
     }
 
@@ -19,10 +18,7 @@ export class Ending {
     }
 
     handleRestartClick() {
-        this.hideEndScreen();
-        if (this.restartCallback) {
-            this.restartCallback();
-        }
+        this.hideEndScreen(); //Its empty to allow for more to be added in the future.
     }
 
     hideEndScreen() {
