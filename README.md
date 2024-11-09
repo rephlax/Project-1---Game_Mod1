@@ -16,7 +16,7 @@ In this Whack-a-Mole game, the player scores points by "whacking" the moles that
 ## 🔧 Technologies Used
 
 - **HTML**: Structure of the game board and elements.
-- **CSS**: Styling for the game layout, colors, and animations.
+- **CSS**: Styling for the game layout, colours, and animations.
 - **JavaScript**: Game logic, timing, randomisation, and event handling.
 
 ## 🚀 How to Play
